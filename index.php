@@ -10,7 +10,7 @@
 
 	<body>
 
-		<h1>Pokémon Encounter Generator</h1>
+		<h2>Pokémon Encounter Generator</h2>
 
 		<div id="container">
 			<img id="background" src="images/background.png">
