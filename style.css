@@ -1,0 +1,203 @@
+:root{
+    --animation-duration: 5s;
+}
+
+
+@font-face {
+    font-family: 'pokefont';
+    src: url('fonts/pokemon_fire_red.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('fonts/pokemon_fire_red.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+#container{
+    position: relative;
+    width: 234px;
+    height: 170px;
+    overflow: hidden;
+}
+
+@keyframes background_animation{
+    0%{
+        margin-left: 0px;
+    }
+
+    50%{
+        margin-left: -120px;
+    }
+
+    100%{
+        margin-left: -120px;
+    }
+}
+
+#background{
+    
+    animation-name: background_animation;
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: infinite;
+}
+
+@keyframes grass_animation{
+    0%{
+        margin-left: 0px;
+        top: 30px;
+    }
+
+    50%{
+        top: 110px;
+        margin-left: -270px;
+    }
+
+    100%{
+        top: 110px;
+        margin-left: -270px;
+    }
+}
+
+#grass{
+    position: absolute;
+    left: 0px;
+    animation-name: grass_animation;
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: infinite;
+}
+
+
+.bar{
+    position: absolute;
+    background-color: black;
+    width: 234px;
+}
+
+@keyframes top_bar_animation{
+    0%{
+        margin-top: 0px;
+    }
+
+    50%{
+        margin-top: -55px;
+    }
+
+    100%{
+        margin-top: -55px;
+    }
+}
+
+#top-bar{
+    height: 55px;
+    top:0px;
+    animation-name: top_bar_animation;
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: infinite;
+}
+
+@keyframes bottom_bar_animation{
+    0%{
+        top: 55px;
+    }
+
+    50%{
+        top: 180px;
+    }
+
+    100%{
+        top: 180px;
+    }
+}
+
+#bottom-bar{
+    height: 115px;
+    animation-name: bottom_bar_animation;
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: infinite;
+}
+
+@keyframes pokemon_animation{
+    0%{
+        left: 240px;
+    }
+
+    50%{
+        left: 132px;
+    }
+
+    100%{
+        left: 132px;
+    }
+}
+
+#pokemon{
+    position:absolute;
+    top: 0px;
+
+    width: 80px;
+    height: 80px;
+
+    animation-name: pokemon_animation;
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: infinite;
+}
+
+#text-box{
+    position: absolute;
+    top: 110px;;
+}
+
+.text{
+    position: absolute;
+    top:120px;
+    left: 10px;
+    font-family: "pokefont";
+    white-space: nowrap;
+    overflow: hidden;
+
+    opacity: 0;
+}
+
+@keyframes text1-animation {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    20% {
+        width: 0;
+        opacity: 1;
+    }
+    50% {
+        width: 14em;
+        opacity: 1;
+    }
+    51% {
+        width: 14em;
+        opacity: 0;
+    }
+}
+
+#text1{
+    animation: text1-animation var(--animation-duration) steps(30, end);
+    animation-iteration-count: infinite;
+}
+
+@keyframes text2-animation {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    50% {
+        width: 0;
+        opacity: 1;
+    }
+    99% {
+        width: 14em;
+        opacity: 1;
+    }
+    100% {
+        width: 14em;
+        opacity: 0;
+    }
+}
+
+#text2{
+    animation: text2-animation var(--animation-duration) steps(40, end);
+    animation-iteration-count: infinite;
+}
