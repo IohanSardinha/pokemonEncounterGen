@@ -3,10 +3,14 @@
 	<head>
 		<link rel="stylesheet" href="style.css" />
 		<script src="script.js"></script> 
+		<script src="html2gif.js"></script>
+		
 		<title>Pokémon Encounter Generator</title>
 	</head>
 
 	<body>
+
+		<h1>Pokémon Encounter Generator</h1>
 
 		<div id="container">
 			<img id="background" src="images/background.png">
@@ -30,8 +34,14 @@
 		<br>
 		<textarea id="textarea-1" oninput="changeText('text1', 1);">A wild pokémon appeared!</textarea>
 		<br>
-		<textarea id="textarea-2" oninput="changeText('text2', 2);">It's a Bulbassaur!</textarea>
+		<textarea id="textarea-2" oninput="changeText('text2', 2);">It's a Bulbasaur!</textarea>
+		<br>
+		<label>Speed:</label> <input type="range" min="100" max="400" value="300" class="slider" id="speed">
+		<br>
+		<button onclick="save();">Save</button>
 		</div>
+
+		<img id="gif">
 
 	</body>
 

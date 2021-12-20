@@ -10,6 +10,7 @@
 }  
 
 #container{
+    margin: auto;
     position: relative;
     width: 234px;
     height: 170px;
@@ -174,7 +175,7 @@
 }
 
 #text1{
-    animation: text1-animation var(--animation-duration) steps(30, end);
+    animation: text1-animation var(--animation-duration) steps(40, end);
     animation-iteration-count: infinite;
 }
 
@@ -200,4 +201,8 @@
 #text2{
     animation: text2-animation var(--animation-duration) steps(40, end);
     animation-iteration-count: infinite;
+}
+
+#pokemons{
+    margin-top: 50px;
 }
