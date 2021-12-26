@@ -10,11 +10,8 @@
 }  
 
 #container{
-    margin: auto;
-    position: relative;
+    border: 1px solid black;
     width: 234px;
-    height: 170px;
-    overflow: hidden;
 }
 
 @keyframes background_animation{
@@ -142,6 +139,10 @@
 #text-box{
     position: absolute;
     top: 110px;;
+}
+
+textarea{
+    font-family: 'pokefont';
 }
 
 .text{
