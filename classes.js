@@ -44,7 +44,7 @@ class Sprite extends CanvasObject{
 
 }
 
-class Rectangle  extends CanvasObject{
+class Rectangle extends CanvasObject{
     constructor(x,y, width, height, color, context, move_function, values){
         super(x,y,width,height, context, move_function, values);
         this.color = color;
@@ -54,5 +54,18 @@ class Rectangle  extends CanvasObject{
         this.context.beginPath();
         this.context.rect(this.position.x, this.position.y, this.size.width, this.size.height);
         this.context.fill();
+    }
+}
+
+class CanvasText extends CanvasObject{
+    constructor(x,y, text, context, move_function, values, font){
+        super(x,y, null, null, context, move_function, values);
+        this.text = text;
+        font = font | '20px pokefont';
+    }
+
+    display(){
+        this.context.font = this.font;
+        this.context.fillText(this.text, this.position.x, this.position.y);
     }
 }
