@@ -25,7 +25,9 @@ function startRecording() {
 
     recorder.on('finished',(blob) =>{
         document.getElementById("modal-title").innerHTML = "Gif ready!";
-        document.getElementById("modal-body").innerHTML = "<img id='gif'>";
+        document.getElementById("modal-body").innerHTML = "<a download='pokemon-encounter' id='download-image'><img id='gif'></a> <a class='btn btn-default' download='pokemon-encounter' id='download-button'>Download</a>";
+        document.getElementById("download-button").href = URL.createObjectURL(blob);
+        document.getElementById("download-image").href = URL.createObjectURL(blob);
         document.getElementById("gif").src = URL.createObjectURL(blob);
         restartAnimation();
     });

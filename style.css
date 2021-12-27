@@ -14,16 +14,36 @@
 #container{
     border: 3px solid black;
     border-radius: 3px;
-    width: 234px;
 }
+
+@media (min-width:960px) {
+    #container{
+        width: 250px;
+    }
+
+    h2{
+        font-size: 3pc;
+    }
+}
+
+@media (max-width:960px) {
+    #container{
+        width: 90%;
+    }
+    h2{
+        font-size: 2pc;
+    }
+}
+
+h2{
+    font-family: "pokefont";
+}
+
+
 
 .container{
     width: 100%;
     text-align:center;
-}
-
-textarea{
-    font-family: "pokefont";
 }
 
 canvas{
@@ -68,4 +88,11 @@ canvas{
   margin-left: auto;
   margin-right: auto;
 }
-  
+
+#download-button{
+    margin-top: 10px;
+}
+
+#modal-body{
+    text-align: center;
+}
