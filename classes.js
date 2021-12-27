@@ -58,10 +58,10 @@ class Rectangle extends CanvasObject{
 }
 
 class CanvasText extends CanvasObject{
-    constructor(x,y, text, context, move_function, values, font){
+    constructor(x,y, text, font, context, move_function, values){
         super(x,y, null, null, context, move_function, values);
         this.text = text;
-        font = font | '20px pokefont';
+        this.font = font;
     }
 
     display(){

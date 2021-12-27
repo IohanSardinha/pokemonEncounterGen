@@ -1,5 +1,7 @@
 :root{
-    --animation-duration: 5s;
+    --colour1: #f1c40f;
+    --colour2: #2c3e50;
+    --speed: 1s;
 }
 
 
@@ -19,3 +21,51 @@
     width: 100%;
     text-align:center;
 }
+
+textarea{
+    font-family: "pokefont";
+}
+
+canvas{
+    font-family: "pokefont";
+}
+  
+@keyframes slide {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: 100px;
+    }
+}
+  
+.bar {
+    min-height: 30px;
+    border-radius: 10px;
+    width: 100%;
+    @media only screen and (max-width: 450px) {
+    width: 100%;
+    }
+    @media only screen and (max-width: 350px) {
+    width: 100%;
+    }
+    box-shadow: 0px 10px 13px -6px rgba(44, 62, 80, 1);
+    background-color: var(--colour2);
+    background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5%,
+    var(--colour1) 5%,
+    var(--colour1) 10%
+    );
+
+    animation: slide var(--speed) linear infinite;
+    will-change: background-position;
+}
+  
+#gif{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  

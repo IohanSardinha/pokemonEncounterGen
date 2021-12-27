@@ -7,12 +7,14 @@ var recording = false, recorder;
 var playing = true;
 let frameCount = 0;
 
-window.onfocus = () =>{
+function restartAnimation(){
     playing = true;
     resetTime();
     resetAll();
     window.requestAnimationFrame(draw);
 }
+
+window.onfocus = restartAnimation;
 
 window.onblur = () =>{
     playing = false;
@@ -34,7 +36,7 @@ function resetAll(){
 }
 
 function draw(){
-    if(playing){
+    if(playing || recording){
         let now = Date.now();
         let deltaTime = (now - last_time)/1000;
         last_time = now;
@@ -44,6 +46,7 @@ function draw(){
             curr_rep++
             resetAll();
             if(recording){
+                playing = false;
                 recording = false;
                 recorder.render();
             }
@@ -73,6 +76,7 @@ onload = ()=>{
 
     canvas = document.getElementById("container");
     context = canvas.getContext("2d");
+    //context.font = "10px pokefont";
     last_time = Date.now();
 
     background = new Sprite(0,0,420,111, "images/background.png", context);
@@ -99,7 +103,7 @@ onload = ()=>{
 
     textBox = new Sprite(0,111,234,170-111,"images/textbox.png", context);
 
-    first_text = new CanvasText(10,130, document.getElementById("textarea-1").value, context);
+    first_text = new CanvasText(10,135, document.getElementById("textarea-1").value,"20px pokefont", context);
     first_text.move_function = (total_time, delta_time) =>{
         let time = total_time % animation_duration;
         if(time < animation_duration/2 || time > animation_duration*3/4){
@@ -112,7 +116,7 @@ onload = ()=>{
         }
     };
 
-    second_text = new CanvasText(10,130, document.getElementById("textarea-2").value, context);
+    second_text = new CanvasText(10,135, document.getElementById("textarea-2").value,"20px pokefont", context);
     second_text.move_function = (total_time, deltaTime) =>{
         let time = total_time % animation_duration;
         if(time > animation_duration*3/4){

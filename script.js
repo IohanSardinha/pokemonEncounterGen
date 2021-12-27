@@ -15,6 +15,8 @@ function changePokemon(element){
 function startRecording() {
     resetAll();
     resetTime();
+    document.getElementById("modal-body").innerHTML = "<div id='ba' class='bar'></div>";
+    document.getElementById("modal-title").innerHTML = "Generating gif...";
     recorder = new GIF({
         workers: 2,
         quality: 10
@@ -22,10 +24,10 @@ function startRecording() {
     recording = true;
 
     recorder.on('finished',(blob) =>{
-        let img = new Image();
-        img.src = URL.createObjectURL(blob);
-        document.body.appendChild(img);
+        document.getElementById("modal-title").innerHTML = "Gif ready!";
+        document.getElementById("modal-body").innerHTML = "<img id='gif'>";
+        document.getElementById("gif").src = URL.createObjectURL(blob);
+        restartAnimation();
     });
 
   }
-  
