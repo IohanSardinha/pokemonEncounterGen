@@ -16,22 +16,53 @@
     border-radius: 3px;
 }
 
-@media (min-width:960px) {
+@media only screen and (min-width:960px) {
     #container{
         width: 250px;
     }
 
     h2{
-        font-size: 3pc;
+        font-size: 3em;
+    }
+
+    .all{
+        display: flex;
+        margin: auto;
+        width: 70%;
+    }
+
+    .container{
+        width: 10%;
+    }
+
+    .inputs{
+        width: 40%;
+        top: 100px;
+        margin-right: 5%;
+        background-color: #ffffff99;
+        padding: 10px;
+        border-radius: 10px;
     }
 }
 
-@media (max-width:960px) {
+@media only screen and  (max-width:960px) {
     #container{
         width: 90%;
     }
     h2{
-        font-size: 2pc;
+        font-size: 4.5vh;
+    }
+    body{
+        border: 3px solid #00000055;
+        height: 100%;
+        border-radius: 5px;
+    }
+    .inputs{
+        margin: 10px;
+        margin-top: 20px;
+    }
+    .container{
+        width: 100%;
     }
 }
 
@@ -39,10 +70,7 @@ h2{
     font-family: "pokefont";
 }
 
-
-
 .container{
-    width: 100%;
     text-align:center;
 }
 
@@ -82,11 +110,11 @@ canvas{
     animation: slide var(--speed) linear infinite;
     will-change: background-position;
 }
-  
+
 #gif{
     display: block;
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #download-button{
@@ -95,4 +123,8 @@ canvas{
 
 #modal-body{
     text-align: center;
+}
+
+#generate-button{
+    width: 100%;
 }

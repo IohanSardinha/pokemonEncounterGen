@@ -74,9 +74,11 @@ function draw(){
 onload = ()=>{
     last_selected = [null, document.getElementById("pokemons").selectedIndex]
 
+    let colors = ["#84d07d","#aaaaaa","#aa8cc5"];
+    document.body.style.backgroundColor = colors[parseInt(Math.random()*colors.length)];
+
     canvas = document.getElementById("container");
     context = canvas.getContext("2d");
-    //context.font = "10px pokefont";
     last_time = Date.now();
 
     background = new Sprite(0,0,420,111, "images/background.png", context);
